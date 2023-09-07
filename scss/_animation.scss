@@ -1,0 +1,38 @@
+.loader {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.90);
+    animation: loader 0.01s;
+    animation-delay: 3s;
+    animation-fill-mode: both;
+    z-index: 10000;
+
+    &_circle {
+        border: 10px solid rebeccapurple;
+        border-top: 7px solid #9356DC;
+        border-bottom: 7px solid #FF79DA;
+        border-left: 7px solid #EAEAEA;
+        border-right: 7px solid #99E2D0;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: loader 4s;
+    }
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+        z-index: -10;
+
+    }
+}

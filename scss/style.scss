@@ -1,0 +1,340 @@
+
+@import "pages";
+@import "button.scss";
+@import "animation.scss";
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body,
+html {
+    margin: 0;
+    font-family: "Roboto";
+}
+
+.main-container {
+    max-width: 1280px;
+    margin: auto;
+    position: relative;
+}
+
+.header {
+    &_logo {
+    text-align: center;
+    font-family: "shrikhand";
+    }
+}
+
+.localisation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-color: #EAEAEA;
+
+    &_text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+.information {
+    padding: 30px;
+    text-align: center;
+    background-color: #fafafa;
+    height: 300px;
+
+    @media (min-width:1024px) {
+        height: 230px;
+    }
+
+    &_title {
+        margin: 15px;
+        font-weight: 700;
+        font-size: 24px;
+
+        @media (min-width:1024px) {
+            font-size: 40px;
+            margin: 10px;
+        }
+    }
+
+    &_text {
+        font-weight: 300;
+        font-size: 18px;
+        padding-bottom: 20px;
+    }
+
+    &_btn {
+        @include buttonprimary();
+    }
+}
+
+.function {
+    padding-bottom: 20px;
+
+    &_container {
+        @media (min-width:1024px) {
+            max-width: 1280px;
+            margin: auto;
+        }
+    }
+
+    &_title {
+        margin-left: 20px;
+        padding-top: 20px;
+    }
+
+    &_choice {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        @media (min-width:1024px) {
+            flex-direction: row;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &_list {
+        padding: 24px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        background-color: #f6f6f6;
+        display: flex;
+        position: relative;
+        gap: 25px;
+        margin-left: 30px;
+        margin-right: 30px;
+
+        @media (min-width:1024px) {
+            width: 350px;
+        }
+    }
+
+    &_icon {
+        padding-left: 10px;
+        color: #7E7E7E;
+    }
+
+    &_text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: black;
+    }
+
+    &_number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        background-color: $color-primary;
+        color: white;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        left: 0;
+        top: 50%;
+    }
+
+    &_color {
+        color: $color-primary;
+    }
+}
+
+.restaurants {
+    margin-top: 30px;
+    background-color: #f6f6f6;
+
+    &_title {
+        padding-top: 50px;
+        padding-left: 20px;
+    }
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    gap: 25px;
+    padding-bottom: 35px;
+
+    @media (min-width:1024px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    article {
+        position: relative;
+        width: 90%;
+        margin: auto;
+        height: 250px;
+        border-radius: 25px;
+        background-color: #fff;
+
+        @media (min-width:1024px) {
+            width: 95%;
+        }
+
+        &:hover {
+            transform: scale(1.015);
+        }
+    }
+
+    &_img {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+        border-radius: 25px 25px 0px 0px;
+    }
+
+    &_info {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        background-color: rgb(158, 226, 208);
+        color: #008766;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    &_title {
+        height: 30%;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h3 {
+            margin: 0;
+            padding-top: 5px;
+            color: black;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 20px;
+        }
+
+        p {
+            margin: 0;
+            padding-top: 7px;
+            color: black;
+            font-weight: 300;
+            font-size: 17px;
+            line-height: 20px;
+        }
+
+        i {
+            margin-top: 20px;
+            margin-right: 20px;
+            color: #101010;
+        }
+    }
+
+    &_icon {
+        height: 32px;
+        width: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card_icon {
+        position: relative;
+        margin-right: 50px;
+
+        i {
+            position: absolute;   
+        }
+
+        .fas {
+            color: transparent;
+            background-image: linear-gradient($color-primary, $color-secondary);
+            background-clip: text;
+            opacity: 0;
+            transition: all 200ms ease-in-out;
+        }
+        
+        &:hover .fas {
+            opacity: 1;   
+        }
+    }
+}
+
+//FOOTER
+
+.footer {
+    background-color: #353535;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+
+        @media (min-width:768px) {
+            flex-direction: row-reverse;
+            gap: 60px;
+            padding: 30px 0px 20px 0px;
+        }
+        @media (min-width:1024px) {
+            gap: 100px;
+            padding: 50px 0px 20px 0px;
+        }
+    }
+
+    &_logo {
+        font-family: 'Shrikhand';
+        color: white;
+        margin: 0;
+        margin-bottom: 16px;
+        display: flex;
+        
+        @media (min-width:768px) {
+            margin-bottom: 0;
+            padding-right: 50px;
+            align-items: center;
+        }
+    }
+
+    &_list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+       
+        @media (min-width:768px) {
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+
+    &_text {
+        margin: 3px 0;
+    }
+
+    &_link {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &_icon {
+        margin-right: 8px;
+        width: 18px;
+    }
+}
